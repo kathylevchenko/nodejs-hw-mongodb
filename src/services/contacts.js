@@ -13,7 +13,7 @@ export async function getAllContacts({
   const limit = perPage;
   const skip = (page - 1) * perPage;
 
-  const contactsQuery = await ContactsCollection.find();
+  const contactsQuery =  ContactsCollection.find();
 
   if (filter.isFavourite !== undefined) {
     console.log('worked', filter.isFavourite);
