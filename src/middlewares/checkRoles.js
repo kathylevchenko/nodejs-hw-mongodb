@@ -24,7 +24,9 @@ export const checkRoles =
       });
 
       if (!contact) {
-        return next(createHttpError(403, 'Forbidden - Not the owner of the contact'));
+        return next(
+          createHttpError(403, 'Forbidden - Not the owner of the contact'),
+        );
       }
     }
 

@@ -18,6 +18,7 @@ import {
 import { authenticate } from '../middlewares/authenticate.js';
 import { ROLES } from '../constants/index.js';
 import { checkRoles } from '../middlewares/checkRoles.js';
+import { upload } from '../middlewares/multers.js';
 
 const contactRoutes = Router();
 
@@ -41,7 +42,7 @@ contactRoutes.get(
 contactRoutes.post(
   '/',
   jsonParser,
-
+  upload.single('photo'),
   validateBody(createContactSchema),
   ctrlWrapper(createContactController),
 );
@@ -49,6 +50,7 @@ contactRoutes.post(
 contactRoutes.patch(
   '/:contactId',
   jsonParser,
+  upload.single('photo'),
   checkRoles(ROLES.AUTOR),
   validateBody(updateContactSchema),
   ctrlWrapper(updateContactController),
