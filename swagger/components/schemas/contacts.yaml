@@ -1,0 +1,48 @@
+type: object
+required:
+  - _id
+  - name
+  - phoneNumber
+  - contactType
+  - userId
+properties:
+  _id:
+    description: 'Contact id'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  name:
+    description: 'Full name'
+    type: string
+    example: 'John Doe'
+
+  phoneNumber:
+    description: "Contact's phone number"
+    type: string
+    example: '8765443578'
+
+  email:
+    description: "Contact's email"
+    type: string
+    example: 'a@example.com'
+
+  isFavourite:
+    description: 'Is it favourite contact or not?'
+    type: boolean
+    example: false
+
+  contactType:
+    description: 'Contact type in phonebook'
+    type: string
+    example: work
+    enum: ['work', 'home', 'personal']
+    default: 'personal'
+
+  userId:
+    description: "User's id number"
+    type: string
+    example: 672c8d3a7d3d7e453840d7bb
+
+  photo:
+    description: "Link to contact's photo"
+    type: string
+    format: binary
