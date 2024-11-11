@@ -10,3 +10,4 @@
 !/temp/.gitkeep
 /uploads/*
 !/uploads/.gitkeep
+/google-oauth.json
