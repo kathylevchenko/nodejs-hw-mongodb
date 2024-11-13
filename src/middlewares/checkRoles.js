@@ -13,7 +13,7 @@ export const checkRoles =
     const { role } = user;
 
     if (!roles.includes(role)) {
-      return next(createHttpError(403, 'Forbidden'));
+      next(createHttpError(404, 'Contact not found'));
     }
 
     const { contactId } = req.params;
@@ -24,9 +24,7 @@ export const checkRoles =
       });
 
       if (!contact) {
-        return next(
-          createHttpError(403, 'Forbidden - Not the owner of the contact'),
-        );
+        return next(createHttpError(404, 'Contact not found'));
       }
     }
 
